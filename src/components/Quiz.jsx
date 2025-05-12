@@ -18,11 +18,10 @@ export const Quiz = () => {
     <h1>Mental Health Month</h1>
     <p>May being the mental health awareness month is a good reminder to check in on yourself and how you are feeling.</p>
     {!submitted ? (
-      // <form className="form" onSubmit={(event) => event.preventDefault()}>
       <form className="form" onSubmit={handleSubmit}>
         <label>
           <h2>How are you feeling: </h2>
-          <select className="feeling-selection" name="feeling selector" onChange={event => setFeeling(event.target.value) } value={feeling}>
+          <select className="feeling-selection" name="feeling selector" onChange={event => setFeeling(event.target.value) } value={feeling} required>
             <option value="">Select how you are feeling</option>
             {currentFeelings.map(currentFeeling => (
               <option key={currentFeeling} value={currentFeeling}>{currentFeeling}</option>
@@ -34,23 +33,25 @@ export const Quiz = () => {
             <label key={frequency}>
               {frequency}
               <input 
-                type="radio" 
+                type="radio"
+                name="meditation frequency" 
                 value={frequency}
                 onChange={event => setMeditation(event.target.value)}
                 checked={meditation === frequency}
+                required
               />
             </label>
           ))}
         <label>
           <h2>What are you grateful for today?</h2>
-          <input type="text" value={grateful} onChange={event => setGrateful(event.target.value)} />
+          <input type="text" value={grateful} onChange={event => setGrateful(event.target.value)} required />
         </label>
         <button>Submit</button>
       </form>
     ) : (
       <div>
         <h2>Hello</h2>
-        <p>You're currently feeling {feeling} and meditating {meditation}. You also said you are grateful for {grateful}</p>
+        <p>You're currently feeling {feeling.toLowerCase()} and meditating {meditation.toLowerCase()}. You also said you are grateful for {grateful.toLowerCase()}.</p>
       </div>
     )}
   </div>)
