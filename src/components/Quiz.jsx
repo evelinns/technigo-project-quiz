@@ -15,8 +15,7 @@ export const Quiz = () => {
   };
 
   return (<div className="mental-checker">
-    <h1>Mental Health Month</h1>
-    <p>May being the mental health awareness month is a good reminder to check in on yourself and how you are feeling.</p>
+    {/* <p>May being the mental health awareness month is a good reminder to check in on yourself and how you are feeling.</p> */}
     {!submitted ? (
       <form className="form" onSubmit={handleSubmit}>
         <label>
