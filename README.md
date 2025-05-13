@@ -1,17 +1,12 @@
 # Quiz
 
-Replace this readme with your own information about the project. You can include things like:
-
-- Brief description of the assignment
-- How you approached the task, what tools and techniques you used, and how you planned it
-- If you had more time, what would be next?
-- How to run the project locally
+- Task to build a quiz using three different elements, needed to include a dropdown and radio button selection.
+- Started with the overall layout and looking into the different form elements I could use. With inspiration of it being mental health month it seemed suitable to include questions for a checkin. Upon having the main code in place I was able to remove duplicate code using map to render the options for some questions.
+- If I had more time I would include more questions and change the following question pending the answer of the previous one.
 
 ## View it live
+
 Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-
-## Getting Started with the Project
 
 ### Dependency Installation & Startup Development Server
 
