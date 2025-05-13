@@ -14,8 +14,14 @@ export const Quiz = () => {
     setSubmitted(true);
   };
 
+  const resetAnswers = () => {
+    setFeeling("");
+    setMeditation("");
+    setGrateful("");
+    setSubmitted(false);
+  }
+
   return (<div className="mental-checker">
-    {/* <p>May being the mental health awareness month is a good reminder to check in on yourself and how you are feeling.</p> */}
     {!submitted ? (
       <form className="form" onSubmit={handleSubmit}>
         <label>
@@ -29,7 +35,7 @@ export const Quiz = () => {
         </label>
           <h2>How often do you meditate:</h2>
           {meditationFrequency.map(frequency => (
-            <label key={frequency}>
+            <label className="meditation" key={frequency}>
               {frequency}
               <input 
                 type="radio"
@@ -48,9 +54,13 @@ export const Quiz = () => {
         <button>Submit</button>
       </form>
     ) : (
-      <div>
-        <h2>Hello</h2>
+      <div className="answers">
+        <h2>Check-in</h2>
         <p>You're currently feeling {feeling.toLowerCase()} and meditating {meditation.toLowerCase()}. You also said you are grateful for {grateful.toLowerCase()}.</p>
+        <div className="reset">
+          <button onClick={() => setSubmitted(false)}>Change Answers</button>
+          <button onClick={() => resetAnswers()}>Clear Answers</button>
+        </div>
       </div>
     )}
   </div>)
